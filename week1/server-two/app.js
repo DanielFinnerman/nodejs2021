@@ -6,8 +6,11 @@ const port = 3000;
 
 app.use(express.static('public'));
 
+app.set('views', './views');
+app.set('view engine', 'pug')
+
 app.get('/', (req, res) => {
-    res.send('<h1>Hello World!</h1>');
+    res.render('index');
 });
 
 app.get('/catinfo', (req, res) => {
